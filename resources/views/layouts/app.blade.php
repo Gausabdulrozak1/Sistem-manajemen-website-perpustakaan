@@ -24,6 +24,10 @@
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="4" rx="1.5"/><rect x="13.5" y="10.5" width="7" height="10" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
                     <span>Dashboard</span>
                 </a>
+                <a class="nav-link {{ request()->routeIs('learning') ? 'is-active' : '' }}" href="{{ route('learning') }}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5-5 7 5 7m8-14 5 7-5 7M14 4l-4 16"/></svg>
+                    <span>Belajar Laravel</span>
+                </a>
                 <a class="nav-link {{ request()->routeIs('books.*') ? 'is-active' : '' }}" href="{{ route('books.index') }}">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h11.5A2.5 2.5 0 0 1 19 7v13H7a2 2 0 0 1-2-2V4.5Z"/><path d="M5 4.5v13A2.5 2.5 0 0 0 7.5 20M9 8h6M9 11h6"/></svg>
                     <span>Koleksi Buku</span>

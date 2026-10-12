@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function (): void {
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::view('/belajar', 'belajar')->name('learning');
     Route::resource('books', BookController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('members', MemberController::class);
