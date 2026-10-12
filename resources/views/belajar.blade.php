@@ -82,6 +82,7 @@
             <div>
                 <h3 class="text-base font-semibold text-[#25362c]">Latihan singkat</h3>
                 <p class="mt-1 text-sm leading-6 text-[#68766d]">Buka katalog, lalu cocokkan alamat <code>/books</code> dengan route, controller, model, dan file Blade di atas.</p>
+                <p class="mt-3 text-sm leading-6 text-[#68766d]"><strong>Hasil yang diharapkan:</strong> alamat menjadi <code>/books</code> dan halaman bertajuk <strong>Koleksi buku</strong>. Tabel buku tampil jika data sudah tersedia; jika belum, muncul pesan katalog kosong.</p>
             </div>
             <a class="button" href="{{ route('books.index') }}">Buka koleksi buku</a>
         </div>

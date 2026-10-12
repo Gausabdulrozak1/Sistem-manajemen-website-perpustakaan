@@ -32,6 +32,7 @@ class LibraryLearningPageTest extends TestCase
             ->assertSee('belongsTo(Category::class)')
             ->assertSee('{{ $book-&gt;title }}', false)
             ->assertSee('resources/views/books/index.blade.php')
+            ->assertSee('Hasil yang diharapkan')
             ->assertSee('Buka koleksi buku');
     }
 }
