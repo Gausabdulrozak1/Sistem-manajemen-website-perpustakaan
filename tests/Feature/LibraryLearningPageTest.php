@@ -27,6 +27,10 @@ class LibraryLearningPageTest extends TestCase
             ->assertViewIs('belajar')
             ->assertSee('Belajar Laravel dari RuangBaca')
             ->assertSee('Route::resource')
+            ->assertSee('compact', false)
+            ->assertSee('categoryId', false)
+            ->assertSee('belongsTo(Category::class)')
+            ->assertSee('{{ $book-&gt;title }}', false)
             ->assertSee('resources/views/books/index.blade.php')
             ->assertSee('Buka koleksi buku');
     }

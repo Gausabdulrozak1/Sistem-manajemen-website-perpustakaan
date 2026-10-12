@@ -48,9 +48,34 @@
         </ol>
 
         <div class="border-t border-[#e7ece7] px-5 py-5 sm:px-6">
-            <p class="eyebrow">Contoh dari proyek</p>
-            <pre class="mt-3 overflow-x-auto rounded-lg bg-[#22372b] p-4 text-sm text-[#eef4ef]"><code>Route::resource('books', BookController::class);</code></pre>
-            <p class="mt-3 text-sm leading-6 text-[#68766d]">Baris ini mendaftarkan alamat daftar, tambah, detail, ubah, dan hapus buku. Untuk latihan pertama, kita fokus pada <code>books.index</code>.</p>
+            <p class="eyebrow">Potongan kode dari empat lapisan</p>
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                <article class="rounded-xl border border-[#e7ece7] bg-[#fbfcfa] p-4">
+                    <h3 class="text-sm font-semibold text-[#25362c]">1. Route · <code>routes/web.php</code></h3>
+                    <pre class="mt-3 overflow-x-auto rounded-lg bg-[#22372b] p-3 text-xs leading-5 text-[#eef4ef]"><code>Route::resource('books', BookController::class);</code></pre>
+                    <p class="mt-3 text-sm leading-6 text-[#68766d]">Laravel mendaftarkan alamat daftar, tambah, detail, ubah, dan hapus buku.</p>
+                </article>
+                <article class="rounded-xl border border-[#e7ece7] bg-[#fbfcfa] p-4">
+                    <h3 class="text-sm font-semibold text-[#25362c]">2. Controller · <code>BookController</code></h3>
+                    <pre class="mt-3 overflow-x-auto rounded-lg bg-[#22372b] p-3 text-xs leading-5 text-[#eef4ef]"><code>return view('books.index', compact('books', 'categories', 'search', 'categoryId'));</code></pre>
+                    <p class="mt-3 text-sm leading-6 text-[#68766d]"><code>compact</code> mengirim variabel yang sudah disiapkan controller ke tampilan Blade.</p>
+                </article>
+                <article class="rounded-xl border border-[#e7ece7] bg-[#fbfcfa] p-4">
+                    <h3 class="text-sm font-semibold text-[#25362c]">3. Model · <code>App\Models\Book</code></h3>
+                    <pre class="mt-3 overflow-x-auto rounded-lg bg-[#22372b] p-3 text-xs leading-5 text-[#eef4ef]"><code>public function category(): BelongsTo
+{
+    return $this-&gt;belongsTo(Category::class);
+}</code></pre>
+                    <p class="mt-3 text-sm leading-6 text-[#68766d]">Relasi <code>belongsTo</code> berarti setiap buku dapat merujuk ke satu kategori.</p>
+                </article>
+                <article class="rounded-xl border border-[#e7ece7] bg-[#fbfcfa] p-4">
+                    <h3 class="text-sm font-semibold text-[#25362c]">4. Blade · <code>books/index.blade.php</code></h3>
+                    <pre class="mt-3 overflow-x-auto rounded-lg bg-[#22372b] p-3 text-xs leading-5 text-[#eef4ef]"><code>@verbatim
+{{ $book-&gt;title }}
+@endverbatim</code></pre>
+                    <p class="mt-3 text-sm leading-6 text-[#68766d]">Kurung kurawal menampilkan judul buku dan Blade meng-escape teks untuk mencegah HTML tak tepercaya dijalankan.</p>
+                </article>
+            </div>
         </div>
 
         <div class="flex flex-col gap-4 border-t border-[#e7ece7] bg-[#f8faf7] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
