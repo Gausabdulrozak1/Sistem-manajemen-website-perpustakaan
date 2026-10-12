@@ -48,6 +48,8 @@ Ketentuan awal dapat diubah lewat `.env`: `LIBRARY_LOAN_PERIOD_DAYS=14`, `LIBRAR
 
 ## Belajar dari proyek
 
+Setelah masuk ke aplikasi, buka menu **Belajar Laravel** (`/belajar`) untuk mengikuti pelajaran singkat berdasarkan kode proyek. Pelajaran pertama menelusuri permintaan `GET /books` melalui route, controller, model `Book`, dan tampilan Blade. Gunakan tombol **Buka koleksi buku** untuk mencocokkan penjelasan dengan katalog yang berjalan.
+
 Urutan implementasi mengikuti alur Laravel yang umum:
 
 1. Migrasi dan model mendefinisikan bentuk serta relasi data.
